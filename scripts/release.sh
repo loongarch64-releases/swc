@@ -7,7 +7,7 @@ VERSION="${1:-}"
 
 # 获取 ABI 参数
 FILE_SERVER="http://10.180.200.67:8000"
-ABI="${2:-}"
+ABI="${2:-loongarch64}"
 if [ -z "${VERSION}" ] || [ -z "${ABI}" ]; then
     echo "❌ Error: Upload file need VERSION and ABI."
     echo "Usage: abi1.0 use loongarch64abi1, abi2.0 use loongarch64"

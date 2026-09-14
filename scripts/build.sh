@@ -14,7 +14,8 @@ ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 DISTS="${ROOT_DIR}/dists"
 SRCS="${ROOT_DIR}/srcs"
 
-IFS=. read -r MAJOR_VER MINOR_VER PATCH_VER <<< "${VERSION#v}"
+VERSION_CORE="${VERSION%%-*}"
+IFS=. read -r MAJOR_VER MINOR_VER PATCH_VER <<< "${VERSION_CORE#v}"
 VER_NUM=$(( 10#${MAJOR_VER} * 1000000 + 10#${MINOR_VER} * 1000 + 10#${PATCH_VER} ))
 
 mkdir -p "${DISTS}/${VERSION}" "${SRCS}"
